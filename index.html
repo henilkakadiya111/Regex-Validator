@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>RegEX Validator</h1>
+      </header>
+
+      <form id="sign-up-form">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            id="email"
+            name="email"     
+            type="email"
+            placeholder="Enter valid email address"
+            pattern="[\w\.\-]+@([\w\-]+\.)+[\w\-]{2,}"
+            required
+          />
+          <span class="error-message">Please enter a valid email address</span>
+        </div>
+        <div class="form-group">
+          <label for="mobile-number">Mobile Number</label>
+          <input
+            id="mobile-number"
+            name="mobile-number"
+            type="tel"
+            placeholder="Enter 10 digit mobile number"
+            maxlength="10"
+            pattern="[6-9]\d{9}"
+            required
+          />
+          <span class="error-message">Please enter a valid mobile number</span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="text"
+            id="password"
+            name="password"
+            placeholder="Enter new password"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+            required
+          />
+          <span class="error-message">Please enter a valid password</span>
+        </div>
+        <ul class="validation-messages">
+          <li data-pattern=".{6,}">Password must be at least 8 characters long</li>
+          <li data-pattern="\d+">Password must contain at least one number</li>
+          <li data-pattern="[A-Z]">Password must include at least one uppercase letter</li>
+          <li data-pattern="[a-z]">Password must include at least one lowercase letter</li>
+          <li data-pattern="[!@#$%^&*]">
+            Password must contain at least one special character (e.g.,
+            !@#$%^&*)
+          </li>
+          <li data-pattern="^\S+$">Password must not contain spaces</li>
+        </ul>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </body>
+</html>
