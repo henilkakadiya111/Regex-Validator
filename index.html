@@ -47,13 +47,13 @@
             id="password"
             name="password"
             placeholder="Enter new password"
-            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}"
             required
           />
           <span class="error-message">Please enter a valid password</span>
         </div>
         <ul class="validation-messages">
-          <li data-pattern=".{6,}">Password must be at least 8 characters long</li>
+          <li data-pattern=".{8,}">Password must be at least 8 characters long</li>
           <li data-pattern="\d+">Password must contain at least one number</li>
           <li data-pattern="[A-Z]">Password must include at least one uppercase letter</li>
           <li data-pattern="[a-z]">Password must include at least one lowercase letter</li>
